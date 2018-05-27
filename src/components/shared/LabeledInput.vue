@@ -1,28 +1,36 @@
 <template>
   <label>
     <span>{{ title }}</span>
-    <input
-      :id="customId"
-      :disabled="disabled"
-      type='number'
-      :value="value"
-      min="0"
-      @change="!!onChange && onInputChange($event)"
-      @input="!!onInputChange && onInputChange($event)" >
+    <input :id="customId" :disabled="disabled" :type="!!this.currency ? 'text' : 'number'" :value="formatValue" min="0" @change="!!onChange && onInputChange($event)" @input="!!onInputChange && onInputChange($event)">
   </label>
 </template>
 
 <script>
 export default {
-  name: 'labeled-input',
+  name: 'labeldInput',
   props: {
+    currency: Boolean - false,
     customId: String,
+    disabled: (Boolean = false),
+    onChange: (Function = null),
+    onInputChange: (Function = null),
     title: String,
     value: String,
-    onInputChange: (Function = null),
-    onChange: (Function = null),
-    disabled: (Boolean = false)
-  }
+  },
+
+  computed: {
+    formatValue: {
+      get: function() {
+        console.log(this.value);
+        if (!this.currency) return this.value;
+
+        return Number(this.value).toLocaleString('pt-BR', {
+          style: 'currency',
+          currency: 'BRL',
+        });
+      },
+    },
+  },
 };
 </script>
 

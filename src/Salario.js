@@ -3,48 +3,48 @@ const TETO_INSS_2018 = 621.04;
 const tabelaINSS_2018 = [
   {
     ate: 1693.72,
-    aliquota: 8
+    aliquota: 8,
   },
   {
     ate: 2822.9,
-    aliquota: 9
+    aliquota: 9,
   },
   {
     ate: 5645.8,
-    aliquota: 11
+    aliquota: 11,
   },
   {
     ate: Number.MAX_SAFE_INTEGER,
-    aliquota: 11
-  }
+    aliquota: 11,
+  },
 ];
 
 const tabelaIRPF_2018 = [
   {
     ate: 1903.98,
     aliquota: 0,
-    deducao: 0
+    deducao: 0,
   },
   {
     ate: 2826.65,
     aliquota: 7.5,
-    deducao: 142.8
+    deducao: 142.8,
   },
   {
     ate: 3751.05,
     aliquota: 15.0,
-    deducao: 354.8
+    deducao: 354.8,
   },
   {
     ate: 4664.68,
     aliquota: 22.5,
-    deducao: 636.13
+    deducao: 636.13,
   },
   {
     ate: Number.MAX_SAFE_INTEGER,
     aliquota: 27.5,
-    deducao: 869.36
-  }
+    deducao: 869.36,
+  },
 ];
 
 export class Salario {
@@ -75,15 +75,11 @@ export class Salario {
     /**
      * Regras de validação
      */
-    if (
-      pSalarioBruto === undefined ||
-      typeof pSalarioBruto !== 'number' ||
-      pSalarioBruto < 0
-    ) {
+    if (pSalarioBruto === undefined || typeof pSalarioBruto !== 'number' || pSalarioBruto < 0) {
       throw new Error(
         'O parâmetro do salário bruto ' +
           'é obrigatório e deve ser um ' +
-          'valor do tipo number maior ou igual a 0!'
+          'valor do tipo number maior ou igual a 0!',
       );
     }
 
@@ -96,8 +92,7 @@ export class Salario {
     this._descontoINSS = this._calcularDescontoINSS();
     this._baseIRPF = this._salarioBruto - this._descontoINSS;
     this._descontoIRPF = this._calcularDescontoIRPF();
-    this._salarioLiquido =
-      this._salarioBruto - this._descontoINSS - this._descontoIRPF;
+    this._salarioLiquido = this._salarioBruto - this._descontoINSS - this._descontoIRPF;
   }
 
   _calcularDescontoINSS() {
@@ -118,10 +113,7 @@ export class Salario {
          * Por isso, o Math.min auxilia garantindo o valor
          * mínimo com base em TETO_INSS_2018
          */
-        descontoINSS = Math.min(
-          this._baseINSS * (item.aliquota / 100),
-          TETO_INSS_2018
-        );
+        descontoINSS = Math.min(this._baseINSS * (item.aliquota / 100), TETO_INSS_2018);
 
         /**
          * Uma vez que encontramos, forçamos o

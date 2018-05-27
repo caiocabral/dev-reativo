@@ -1,14 +1,12 @@
-import Vue from 'vue'
-import VueRx from 'vue-rx';
+import Vue from 'vue';
+import App from './App.vue';
 
-import App from './App.vue'
-
-import { timer, interval } from 'rxjs/observable';
-import { pipe, takeUntil } from 'rxjs/operators';
-
-Vue.use(VueRx, { timer, interval, pipe, takeUntil });
-
+/**
+ * Criando uma instância global de Vue,
+ * associando ao id #app no HTML e renderizando
+ * a classe App (principal)
+ */
 new Vue({
   el: '#app',
-  render: h => h(App)
-})
+  render: h => h(App),
+});
