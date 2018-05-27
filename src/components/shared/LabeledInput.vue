@@ -7,9 +7,9 @@
 
 <script>
 export default {
-  name: 'labeldInput',
+  name: 'LabeldInput',
   props: {
-    currency: Boolean - false,
+    currency: (Boolean = false),
     customId: String,
     disabled: (Boolean = false),
     onChange: (Function = null),

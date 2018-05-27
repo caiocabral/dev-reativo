@@ -7,14 +7,11 @@ module.exports = {
   env: {
     browser: true,
   },
-  extends: ['prettier', 'prettier/standard', 'plugin:vue/recommended'],
-  plugins: ['vue', 'prettier'],
+  extends: ['plugin:prettier/recommended', 'plugin:vue/recommended'],
+  plugins: ['prettier', 'vue'],
   rules: {
     'prettier/prettier': 'error',
-    'comma-dangle': [
-      'error',
-      'only-multiline',
-    ],
+
     "vue/html-indent": ["error", 2, {
       "attribute": 1,
       "closeBracket": 0,

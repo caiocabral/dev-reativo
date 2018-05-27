@@ -1,12 +1,11 @@
 {
-  "singleQuote": true,
-  "trailingComma": "all",
-  "eslintIntegration": false,
-  "printWidth": 100,
-  "tabWidth": 2,
-  "useTabs": false,
-  "semi": true,
-  "bracketSpacing": true,
-  "arrowParens": "avoid",
-  "parser": "babylon",
+    "singleQuote": true,
+    "trailingComma": "all",
+    "eslintIntegration": false,
+    "printWidth": 100,
+    "tabWidth": 2,
+    "useTabs": false,
+    "semi": true,
+    "bracketSpacing": true,
+    "arrowParens": "avoid"
 }

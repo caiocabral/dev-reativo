@@ -1,28 +1,29 @@
 <template>
   <div id="app">
-    <div class='row'>
-      <img src="./assets/logo.png" width='50px'>
+    <div class="row">
+      <img src="./assets/logo.png" width="50px">
       <h3>
         Cálculo de salário com Vue.js
       </h3>
     </div>
-    <br><br>
+    <br>
+    <br>
 
     <div class="content">
-      <div class='mainContent'>
+      <div class="mainContent">
         <h3>Cálculo em tempo real</h3>
-        <labeled-input customId="inputSalarioBruto" title='Salário bruto:' :onInputChange="updateSalario" />
-        <labeled-input currency title='Base INSS:' :value="salario.baseINSS" disabled />
-        <labeled-input currency title='Desconto INSS:' :value="salario.descontoINSS" disabled />
-        <labeled-input currency title='Base IRPF:' :value="salario.baseIRPF" disabled />
-        <labeled-input currency title='Desconto IRPF:' :value="salario.descontoIRPF" disabled />
-        <labeled-input currency title='Salário líquido:' :value="salario.salarioLiquido" disabled />
+        <labeled-input :on-input-change="updateSalario" custom-id="inputSalarioBruto" title="Salário bruto:" />
+        <labeled-input :value="salario.baseINSS" currency title="Base INSS:" disabled />
+        <labeled-input :value="salario.descontoINSS" currency title="Desconto INSS:" disabled />
+        <labeled-input :value="salario.baseIRPF" currency title="Base IRPF:" disabled>
+          <labeled-input :value="salario.descontoIRPF" currency title="Desconto IRPF:" disabled />
+          <labeled-input :value="salario.salarioLiquido" currency title="Salário líquido:" disabled />
       </div>
       <div class="sideContent">
         <h3>
           Cálculo reverso com Observables
         </h3>
-        <labeled-input customId="inputSalarioLiquidoDesejado" title="Salário líquido desejado:" :value="salarioLiquidoDesejado" :onInputChange="updateSalarioLiquidoDesejado" />
+        <labeled-input :value="salarioLiquidoDesejado" :on-input-change="updateSalarioLiquidoDesejado" custom-id="inputSalarioLiquidoDesejado" title="Salário líquido desejado:" />
         <button @click="findSalarioLiquido">Calcular salário bruto correspondente</button>
       </div>
     </div>
@@ -38,7 +39,7 @@ import { Salario } from './Salario';
 import LabeledInput from './components/shared/LabeledInput.vue';
 
 export default {
-  name: 'app',
+  name: 'App',
   components: {
     'labeled-input': LabeledInput,
   },
