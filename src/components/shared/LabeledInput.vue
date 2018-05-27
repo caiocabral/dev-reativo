@@ -2,11 +2,13 @@
   <label>
     <span>{{ title }}</span>
     <input
+      :id="customId"
       :disabled="disabled"
       type='number'
       :value="value"
       min="0"
-      @input="onInputChange($event)" >
+      @change="!!onChange && onInputChange($event)"
+      @input="!!onInputChange && onInputChange($event)" >
   </label>
 </template>
 
@@ -14,9 +16,11 @@
 export default {
   name: 'labeled-input',
   props: {
+    customId: String,
     title: String,
     value: String,
-    onInputChange: Function,
+    onInputChange: (Function = null),
+    onChange: (Function = null),
     disabled: (Boolean = false)
   }
 };
