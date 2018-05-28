@@ -15,7 +15,7 @@
         <labeled-input :on-input-change="updateSalario" custom-id="inputSalarioBruto" title="Salário bruto:" />
         <labeled-input :value="salario.baseINSS" currency title="Base INSS:" disabled />
         <labeled-input :value="salario.descontoINSS" currency title="Desconto INSS:" disabled />
-        <labeled-input :value="salario.baseIRPF" currency title="Base IRPF:" disabled>
+        <labeled-input :value="salario.baseIRPF" currency title="Base IRPF:" disabled />
           <labeled-input :value="salario.descontoIRPF" currency title="Desconto IRPF:" disabled />
           <labeled-input :value="salario.salarioLiquido" currency title="Salário líquido:" disabled />
       </div>
