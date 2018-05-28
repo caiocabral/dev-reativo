@@ -66,9 +66,6 @@ export class Salario {
 
     //Congelando
     Object.freeze(this);
-
-    //console.log('Base INSS: ' + this._baseINSS);
-    //console.log('Desconto INSS: ' + this._descontoINSS);
   }
 
   _validarSalarioBruto(pSalarioBruto) {

@@ -21,7 +21,6 @@ export default {
   computed: {
     formatValue: {
       get: function() {
-        console.log(this.value);
         if (!this.currency) return this.value;
 
         return Number(this.value).toLocaleString('pt-BR', {
