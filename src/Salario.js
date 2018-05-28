@@ -144,6 +144,9 @@ export class Salario {
     return descontoIRPF;
   }
 
+  /**
+   * Getters com um mínimo de formatação
+   */
   get salarioBruto() {
     return this._salarioBruto.toFixed(2);
   }
