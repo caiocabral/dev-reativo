@@ -1,7 +1,15 @@
 <template>
   <label>
     <span>{{ title }}</span>
-    <input :id="customId" :disabled="disabled" :type="!!this.currency ? 'text' : 'number'" :value="formatValue" min="0" @change="!!onChange && onInputChange($event)" @input="!!onInputChange && onInputChange($event)">
+    <input
+      :id="customId"
+      :disabled="disabled"
+      :type="!!this.currency ? 'text' : 'number'"
+      :value="formatValue"
+      min="0"
+      @change="!!onChange && onInputChange($event)"
+      @input="!!onInputChange && onInputChange($event)"
+    >
   </label>
 </template>
 

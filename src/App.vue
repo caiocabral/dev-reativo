@@ -1,10 +1,13 @@
 <template>
   <div id="app">
     <div class="row">
-      <img src="./assets/logo.png" width="50px">
-      <h3>
-        Cálculo de salário com Vue.js
-      </h3>
+      <img
+        src="./assets/logo.png"
+        width="50px"
+      >
+        <h3>
+          Cálculo de salário com Vue.js
+        </h3>
     </div>
     <br>
     <br>
@@ -12,19 +15,64 @@
     <div class="content">
       <div class="mainContent">
         <h3>Cálculo em tempo real</h3>
-        <labeled-input :on-input-change="updateSalario" custom-id="inputSalarioBruto" title="Salário bruto:" />
-        <labeled-input :value="salario.baseINSS" currency title="Base INSS:" disabled />
-        <labeled-input :value="salario.descontoINSS" currency title="Desconto INSS:" disabled />
-        <labeled-input :value="salario.baseIRPF" currency title="Base IRPF:" disabled />
-        <labeled-input :value="salario.descontoIRPF" currency title="Desconto IRPF:" disabled />
-        <labeled-input :value="salario.salarioLiquido" currency title="Salário líquido:" disabled />
+
+        <labeled-input
+          :on-input-change="updateSalario"
+          custom-id="inputSalarioBruto"
+          title="Salário bruto:"
+        />
+
+        <labeled-input
+          :value="salario.baseINSS"
+          currency
+          title="Base INSS:"
+          disabled
+        />
+
+        <labeled-input
+          :value="salario.descontoINSS"
+          currency
+          title="Desconto INSS:"
+          disabled
+        />
+
+        <labeled-input
+          :value="salario.baseIRPF"
+          currency
+          title="Base IRPF:"
+          disabled
+        />
+
+        <labeled-input
+          :value="salario.descontoIRPF"
+          currency
+          title="Desconto IRPF:"
+          disabled
+        />
+
+        <labeled-input
+          :value="salario.salarioLiquido"
+          currency
+          title="Salário líquido:"
+          disabled
+        />
       </div>
+
       <div class="sideContent">
         <h3>
           Cálculo reverso com Observables
         </h3>
-        <labeled-input :value="salarioLiquidoDesejado" :on-input-change="updateSalarioLiquidoDesejado" custom-id="inputSalarioLiquidoDesejado" title="Salário líquido desejado:" />
-        <button @click="findSalarioLiquido">Calcular salário bruto correspondente</button>
+
+        <labeled-input
+          :value="salarioLiquidoDesejado"
+          :on-input-change="updateSalarioLiquidoDesejado"
+          custom-id="inputSalarioLiquidoDesejado"
+          title="Salário líquido desejado:"
+        />
+
+        <button @click="findSalarioLiquido">
+          Calcular salário bruto correspondente
+        </button>
       </div>
     </div>
 

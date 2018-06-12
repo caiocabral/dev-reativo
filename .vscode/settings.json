@@ -7,8 +7,14 @@
   "vetur.format.defaultFormatter.ts": "prettier",
   "vetur.validation.style": true,
   "vetur.validation.template": true,
-  "vetur.format.defaultFormatter.html": "js-beautify-html",
   "editor.formatOnSave": true,
   "eslint.alwaysShowStatus": true,
   "eslint.autoFixOnSave": true,
+  "prettier.disableLanguages": ["vue"],
+  "vetur.format.defaultFormatter.html": "js-beautify-html",
+  "vetur.format.defaultFormatterOptions": {
+    "js-beautify-html": {
+      "wrap_attributes": "force-expand-multiline"
+    }
+  }
 }
