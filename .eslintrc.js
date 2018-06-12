@@ -8,15 +8,19 @@ module.exports = {
     browser: true,
   },
   extends: ['plugin:prettier/recommended', 'plugin:vue/recommended'],
-  plugins: ['prettier', 'vue'],
+  plugins: ['prettier', 'vue', 'html'],
   rules: {
     'prettier/prettier': 'error',
 
-    "vue/html-indent": ["error", 2, {
-      "attribute": 1,
-      "closeBracket": 0,
-      "alignAttributesVertically": true,
-      "ignores": [],
-    }]
+    'vue/html-indent': [
+      'error',
+      2,
+      {
+        attribute: 1,
+        closeBracket: 0,
+        alignAttributesVertically: true,
+        ignores: [],
+      },
+    ],
   },
 };

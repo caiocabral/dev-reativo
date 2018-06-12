@@ -16,8 +16,8 @@
         <labeled-input :value="salario.baseINSS" currency title="Base INSS:" disabled />
         <labeled-input :value="salario.descontoINSS" currency title="Desconto INSS:" disabled />
         <labeled-input :value="salario.baseIRPF" currency title="Base IRPF:" disabled />
-          <labeled-input :value="salario.descontoIRPF" currency title="Desconto IRPF:" disabled />
-          <labeled-input :value="salario.salarioLiquido" currency title="Salário líquido:" disabled />
+        <labeled-input :value="salario.descontoIRPF" currency title="Desconto IRPF:" disabled />
+        <labeled-input :value="salario.salarioLiquido" currency title="Salário líquido:" disabled />
       </div>
       <div class="sideContent">
         <h3>
