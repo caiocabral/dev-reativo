@@ -96,7 +96,6 @@ export default {
     return {
       salario: new Salario(0),
       salarioLiquidoDesejado: '5000',
-      encontrarSalario$: null,
     };
   },
 
