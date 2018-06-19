@@ -1,32 +1,64 @@
 <template>
+  <!--
+    O componente labeled-input agrupa
+    um label e um input
+  -->
   <label>
-    <span>{{ title }}</span>
+    <span>{{ label }}</span>
     <input
       :id="customId"
       :disabled="disabled"
       :type="!!this.currency ? 'text' : 'number'"
       :value="formatValue"
-      min="0"
-      @change="!!onChange && onInputChange($event)"
       @input="!!onInputChange && onInputChange($event)"
+      min="0"
     >
   </label>
 </template>
 
 <script>
 export default {
-  name: 'LabeldInput',
+  /**
+   * Como o componente será
+   * representado (tag)
+   */
+  name: 'labeled-input',
+
+  /**
+   * Propriedades (atributos)
+   * do componente.
+   *
+   * É interessante definirmos
+   * os tipos para facilitar
+   * validações
+   */
   props: {
-    currency: (Boolean = false),
+    currency: {
+      type: Boolean,
+      default: false,
+    },
+
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
+
     customId: String,
-    disabled: (Boolean = false),
-    onChange: (Function = null),
-    onInputChange: (Function = null),
-    title: String,
+    label: String,
     value: String,
+    onInputChange: Function,
   },
 
+  /**
+   * Alguns métodos podem ser encapsulados
+   * como "computed properties"
+   */
   computed: {
+    /**
+     * Formatando o valor do input
+     * caso o usuário tenha definido
+     * a prop "currency"
+     */
     formatValue: {
       get: function() {
         if (!this.currency) return this.value;
@@ -41,6 +73,8 @@ export default {
 };
 </script>
 
+// Para estilos focados apenas
+// no componente, utilizamos 'scoped'
 <style scoped>
 input,
 span {
