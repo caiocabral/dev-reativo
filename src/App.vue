@@ -178,13 +178,6 @@ export default {
     },
 
     /**
-     * Atualiza o salário líquido desejado
-     */
-    updateSalarioLiquidoDesejado: function(event) {
-      this.salarioLiquidoDesejado = event.target.value;
-    },
-
-    /**
      * Atualizamos o salário de forma imutável, ou seja,
      * instanciando um novo objeto da classe Salario, que
      * já faz todos os cálculos necessários no construtor.
@@ -193,6 +186,13 @@ export default {
      */
     _internalUpdateSalario: function(newSalario) {
       this.salario = new Salario(+newSalario);
+    },
+
+    /**
+     * Atualiza o salário líquido desejado
+     */
+    updateSalarioLiquidoDesejado: function(event) {
+      this.salarioLiquidoDesejado = event.target.value;
     },
 
     /**
@@ -234,7 +234,7 @@ export default {
           /**
            * Obtendo o salário líquido do momento
            */
-          const currentValue = this.salario.salarioLiquido;
+          const currentValue = +this.salario.salarioLiquido;
 
           /**
            * Calculando a diferença entre o salário líquido do momento
@@ -259,7 +259,9 @@ export default {
           inputSalarioBruto.value = (+inputSalarioBruto.value + increment).toFixed(2);
 
           /**
-           * Atualizando o salário bruto
+           * Atualizando o salário bruto. Quando atualizamos o valor
+           * "na mão", o Vue não consegue monitorar as
+           * mudanças
            */
           this._internalUpdateSalario(inputSalarioBruto.value);
 

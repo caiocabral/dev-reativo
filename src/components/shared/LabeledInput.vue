@@ -8,7 +8,7 @@
     <input
       :id="customId"
       :disabled="disabled"
-      :type="!!this.currency ? 'text' : 'number'"
+      :type="!!currency ? 'text' : 'number'"
       :value="formatValue"
       @input="!!onInputChange && onInputChange($event)"
       min="0"
