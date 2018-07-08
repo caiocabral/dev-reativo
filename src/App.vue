@@ -113,7 +113,7 @@
 
 <script>
 import { interval, timer, Observable } from 'rxjs';
-import { pipe, takeUntil, map, filter } from 'rxjs/operators';
+import { takeUntil, map, filter } from 'rxjs/operators';
 
 /**
  * Classe que calcula dados de salários
